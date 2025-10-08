@@ -96,5 +96,18 @@ Scenario Outline: create a booking with invalid date range
       |  sam      | raj      | raj@gmail.com       | 98774523656  | 2025-03-18 | 2025-03-10  | invalid date range |
         
       
-      
+@negativepath_3
+Scenario Outline: create a booking with more than two person
+	Given user hits endpoint "api/booking"
+    And user books the room with the given details
+      | firstname   | lastname   | email   | phone   | checkin   | checkout   | bookingid   |
+      | <firstname> | <lastname> | <email> | <phone> | <checkin> | <checkout> | <bookingid> |
+    Then the response status code should be 400
+	And the user should see valid error response "<FieldError>"
+
+    Examples:
+      | firstname | lastname | email                | phone        | checkin    | checkout    | FieldError                 |
+      |  sam      | raj      | raj1@gmail.com       | 98774523656  | 2025-03-10 | 2025-03-18  | maximum two guests allowed | 
+      |  ram      | raj      | raj2@gmail.com       | 98774523656  | 2025-03-12 | 2025-03-13  | maximum two guests allowed | 
+      |  dam      | raj      | raj3@gmail.com       | 98774523656  | 2025-03-15 | 2025-03-16  | maximum two guests allowed |
       
