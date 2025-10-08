@@ -16,7 +16,7 @@ public class loadproperties {
 	public static String getProperty(final String key) {
 
 		try {
-			input = new FileInputStream("src/test/java/base/Global.Properties");
+			input = new FileInputStream("src/test/java/Config/common.properties");
 			prop = new Properties();
 			prop.load(input);
 		} catch (FileNotFoundException FileNotFoundException) {
