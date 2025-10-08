@@ -111,3 +111,21 @@ Scenario Outline: create a booking with more than two person
       |  ram      | raj      | raj2@gmail.com       | 98774523656  | 2025-03-12 | 2025-03-13  | maximum two guests allowed | 
       |  dam      | raj      | raj3@gmail.com       | 98774523656  | 2025-03-15 | 2025-03-16  | maximum two guests allowed |
       
+@invalidfirstname	
+Scenario: create booking with firstname contains special character
+	Given user hits endpoint "api/booking/"
+    When user create booking request with "firstname" as "R@M#U"
+    Then the response status code should be 400  
+ 
+@invalidlastname	
+Scenario: create booking with lastname contains numeric value
+	Given user hits endpoint "api/booking/"
+    When user create booking request with "lastname" as "2345"
+    Then the response status code should be 400
+    
+@invalidphoneno	
+Scenario: create booking with phoneno contains alphanumeric value
+	Given user hits endpoint "api/booking/"
+    When user create request with "phoneno" as "2345hjuyt7u"
+    Then the response status code should be 400  
+    
