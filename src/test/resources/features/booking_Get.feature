@@ -115,3 +115,40 @@ Scenario: Get the details of the room by room id and perform schema validation
 	When asks the details of the room by room id 421
 	Then the response status code should be 200
 	Then validate the response with json schema "getbookingresponseschema.json"
+	
+@invalidId
+Scenario: validate the response code for invalid room ID
+    Given user hits endpoint "api/auth/login"
+    When asks the details of the room by room id 000
+    Then user should get the response code 404
+
+@invalidUsername
+Scenario: validate the response code for invalid password
+    Given user hits endpoint "api/auth/login"
+    When user creates a auth token with login authentication as "admin13" and "password"
+    Then user should get the response code 401 
+      
+@invalidPassword
+Scenario: validate the response code for invalid password
+    Given user hits endpoint "api/auth/login"
+    When user creates a auth token with login authentication as "admin" and "password01"
+    Then user should get the response code 401   
+    
+@missingroomID
+Scenario: validate the response code for missing room ID
+    Given user hits endpoint "api/auth/login"
+    When asks the details of the room without any room id
+    Then user should get the response code 400
+    
+@nullRoomID
+Scenario: validate the response for null room ID
+    Given user hits endpoint "api/auth/login"
+    When asks the details of the room by room id as null
+    Then user should get the response code 400   
+
+@withoutauthentication
+Scenario: Get booking details by id without authentication.
+    Given user hits endpoint "api/auth/login"
+    When user remove authentication token
+    Then user should get the response code 403            	
+	
