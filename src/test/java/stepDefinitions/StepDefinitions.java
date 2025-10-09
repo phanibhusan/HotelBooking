@@ -35,13 +35,16 @@ public class StepDefinitions {
 	private void validateBookingResponse(String firstname, String lastname, String checkin, String checkout,
 			int roomid) {
 	}
+
 	private String generateRandomRoomId() {
 		return null;
 	}
+
 	private String createRequestBody() {
-		
+
 		return null;
 	}
+
 	public StepDefinitions() {
 		bookingRequest = new Booking();
 		util = new CommonUtil();
@@ -169,20 +172,13 @@ public class StepDefinitions {
 			dates.setCheckin(data.get("checkin"));
 			dates.setCheckout(data.get("checkout"));
 			bookingRequest.setBookingDates(dates);
-			bookingRequest.setRoomid(roomid);			
+			bookingRequest.setRoomid(roomid);
 			bookingRequest.setDepositpaid(false);
-		}	
-		response = requestSetup()
-				.body(createRequestBody())
-				.cookie("token", bookingRequest.getToken())
-				.when()
-				.put(bookingRequest.getEndPoint() + bookingId);				
-		
+		}
+		response = requestSetup().body(createRequestBody()).cookie("token", bookingRequest.getToken()).when()
+				.put(bookingRequest.getEndPoint() + bookingId);
+
 		System.out.println("response status code =" + response.statusCode());
 	}
-	
+
 }
-
-	
-
-	
