@@ -59,7 +59,7 @@ public class stepdefination {
         String jsonBody = mapper.writeValueAsString(bookingRequest);
 
         // Debug logs
-        System.out.println("📤 Request Body: " + jsonBody);
+        System.out.println("Request Body: " + jsonBody);
 
         // Execute POST request
         response = util.requestSetup()
@@ -68,8 +68,8 @@ public class stepdefination {
                 .post(bookingRequest.getEndPoint());
 
         // Debug logs
-        System.out.println("✅ Response Code: " + response.getStatusCode());
-        System.out.println("📥 Response Body: " + response.getBody().asString());
+        System.out.println(" Response Code: " + response.getStatusCode());
+        System.out.println(" Response Body: " + response.getBody().asString());
     }
 
     @Then("the response status code should be {int}")
