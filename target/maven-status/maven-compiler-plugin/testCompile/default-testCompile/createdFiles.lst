@@ -1,2 +1,2 @@
-TestRunner\TestRunner.class
-StepDefinations\stepdefination.class
+stepdefinitions\StepDefinitions.class
+runner\TestRunner.class
