@@ -110,6 +110,20 @@ Scenario Outline: create a booking with more than two person
       |  sam      | raj      | raj1@gmail.com       | 98774523656  | 2025-03-10 | 2025-03-18  | maximum two guests allowed | 
       |  ram      | raj      | raj2@gmail.com       | 98774523656  | 2025-03-12 | 2025-03-13  | maximum two guests allowed | 
       |  dam      | raj      | raj3@gmail.com       | 98774523656  | 2025-03-15 | 2025-03-16  | maximum two guests allowed |
+    
+@negativepath_4
+Scenario Outline: create a booking with missing mandatory fields
+	Given user hits endpoint "api/booking"
+    And user books the room with the given details
+       |lastname   | email   | phone   | checkin   | checkout   | bookingid   |
+       |<lastname> | <email> | <phone> | <checkin> | <checkout> | <bookingid> |
+    Then the response status code should be 400
+	And the user should see valid error response "<FieldError>"
+
+    Examples:
+      | lastname | email                | phone        | checkin    | checkout    | FieldError                 |
+      | raj      | raj1@gmail.com       | 98774523656  | 2025-03-10 | 2025-03-18  | Mandatory field is missing | 
+      
       
 @invalidfirstname	
 Scenario: create booking with firstname contains special character

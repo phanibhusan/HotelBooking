@@ -1,18 +1,13 @@
 package StepDefinations;
-//import static org.junit.Assert.assertEquals;
-import java.util.List;
 import java.util.Map;
-import org.json.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
-
 import org.testng.Assert;
-import org.testng.asserts.*;
+import org.testng.annotations.Test;
+
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import pojoObjects.Booking;
 import pojoObjects.BookingDates;
@@ -28,6 +23,7 @@ public class stepdefination{
 	Response response;
 	
 	public stepdefination() {}
+	@Test
 	@Given("user hits endpoint {string}")
 	public void user_hits_endpoint(String endpoint) {
 		bookingRequest.setEndPoint(endpoint);

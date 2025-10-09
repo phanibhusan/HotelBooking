@@ -181,7 +181,30 @@ Examples:
       | smnuti    | pal      | pal.6@gmail.com     |  87955879706  | 2025-03-15 | 2025-03-18 | 
       | sjuti     | pal      | pal.06@gmail.com    |  87955879706  | 2025-03-15 | 2025-03-18 |
       
+ 
+@errors_1
+Scenario Outline: Update a booking with missing mandatory fields
+	Given user hits endpoint "api/booking"
+    And user books the room with the given details
+     | firstname   |lastname   | email   | phone   | checkin   | checkout   | bookingid   |
+     | <firstname> |<lastname> | <email> | <phone> | <checkin> | <checkout> | <bookingid> |
+    Then user should get the response code 200
+	When User requests the details of the room by room id
+	Then the response status code should be 200
+	When the user edits the booking details
+		
+    Examples:
+      | lastname | email                | phone        | checkin    | checkout    | FieldError                 |
+      | raj      | raj1@gmail.com       | 98774523656  | 2025-03-10 | 2025-03-18  | Mandatory field is missing | 
+ 
+      Then the response status code should be 400
+	  And the user should see response with incorrect "<FieldError>"
+	  
+	Examples:
+      | firstname | lastname | email              | phone       | checkin    | checkout   |
+      | virat     | kohli    | virat1@gmail.com   | 46546321354 | 2025-10-12 | 2025-10-13 |
       
+	
 @invalidID	
 Scenario: update booking with invalid ID
 	Given user hits endpoint "api/booking/"
