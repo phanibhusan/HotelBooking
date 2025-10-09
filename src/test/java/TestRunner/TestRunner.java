@@ -1,11 +1,17 @@
 package TestRunner;
 
-import io.cucumber.testng.CucumberOptions;
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
 
-//@RunWith(CucumberOptions.class)
+import io.cucumber.junit.CucumberOptions;
+
+//import io.cucumber.testng.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@SuppressWarnings({ "deprecation", "unused" })
 @CucumberOptions(
-		features = "src/test/resources/features",
-
+		
+		features = "src/test/resources/features/booking.feature",
 		glue = {"StepDefinations"}, 
 		dryRun=false,
 
@@ -15,10 +21,8 @@ import io.cucumber.testng.CucumberOptions;
 	    "json:target/cucumber-report.json" // JSON report
 	     },
          monochrome = true,
-         tags = "CreateBooking"
-
+         publish = true
+         
 )
 
-public class TestRunner {
-
-}
+public class TestRunner {}

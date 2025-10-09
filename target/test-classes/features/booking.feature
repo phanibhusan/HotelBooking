@@ -11,23 +11,23 @@ Given user hits endpoint "api/booking"
     
     Examples:
       | firstname | lastname | email                | phone       | checkin    | checkout   |
-      | virat     | kohli    | virat.kohli@gmail.com| 9876789098 | 2025-10-15 | 2025-10-19  |
-      | MS        | Dhoni    | msd@gmail.com        | 8547589630 | 2025-10-20 | 2025-10- 20 |
+      | virat     | kohli    | virat.kohli@gmail.com| 98767890982 | 2025-10-15 | 2025-10-19 |
+      | MSD       | Dhoni    | msd@gmail.com        | 85475896302 | 2025-10-20 | 2025-10-21 |
       
       
       
-@happypath_1
- Scenario Outline: Successfully create a single room booking
-    Given user hits endpoint "api/booking"
-    When user books the room with the given details
-		| firstname   | lastname   | email   | phone   | checkin   | checkout   |	
-        | <firstname> | <lastname> | <email> | <phone> | <checkin> | <checkout> |
-    Then the response status code should be 200
-    
-    Examples:
-      | firstname | lastname | email                | phone       | checkin    | checkout   |
-      | virat     | kohli    | virat.kohli@gmail.com| 9876789098 | 2025-10-15 | 2025-10-19  |
-      | MS        | Dhoni    | msd@gmail.com        | 8547589630 | 2025-10-20 | 2025-10- 20 | 
+	@happypath_1
+	 Scenario Outline: Successfully create a single room booking
+	    Given user hits endpoint "api/booking"
+	    When user books the room with the given details
+			| firstname   | lastname   | email   | phone   | checkin   | checkout   |	
+	        | <firstname> | <lastname> | <email> | <phone> | <checkin> | <checkout> |
+	    Then the response status code should be 200
+	    
+	    Examples:
+	      | firstname | lastname | email                | phone       | checkin    | checkout   |
+	      | virat     | kohli    | virat.kohli@gmail.com| 98767890986 | 2025-10-15 | 2025-10-19 |
+	      | MSD        | Dhoni    | msd@gmail.com       | 85475896306 | 2025-10-20 | 2025-10-21 | 
       
       
 @happypath_2
@@ -40,8 +40,8 @@ Given user hits endpoint "api/booking"
     
     Examples:
       | firstname | lastname | email                | phone       | checkin    | checkout   |
-      | virat     | kohli    | virat.kohli@gmail.com| 9876789098 | 2025-10-15 | 2025-10-19  |
-      | MS        | Dhoni    | msd@gmail.com        | 8547589630 | 2025-10-20 | 2025-10- 20 |  
+      | virat     | kohli    | virat.kohli@gmail.com| 98767890989 | 2025-10-15 | 2025-10-19 |
+      | MSD       | Dhoni    | msd@gmail.com        | 85475896309 | 2025-10-20 | 2025-10- 21|  
       
 @happypath_3
  Scenario Outline: Successfully create a Suit room booking
@@ -53,8 +53,8 @@ Given user hits endpoint "api/booking"
     
     Examples:
       | firstname | lastname | email                | phone       | checkin    | checkout   |
-      | virat     | kohli    | virat.kohli@gmail.com| 9876789098 | 2025-10-15 | 2025-10-19  |
-      | MS        | Dhoni    | msd@gmail.com        | 8547589630 | 2025-10-20 | 2025-10- 20 |
+      | virat     | kohli    | virat.kohli@gmail.com| 98767890988 | 2025-10-15 | 2025-10-19  |
+      | MSDD      | Dhoni    | msd@gmail.com        | 85475896308 | 2025-10-20 | 2025-10- 20 |
       
  
  

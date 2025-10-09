@@ -14,7 +14,6 @@ import static io.restassured.RestAssured.*;
 //import static org.junit.Assert.assertEquals;
 import pojoObjects.Booking;
 
-
 public class CommonUtil {
 	ObjectMapper mapper;
 	protected Booking bookingRequest = new Booking();
