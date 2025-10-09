@@ -1,4 +1,4 @@
-@EditBooking @regressiontests
+@EditBooking @RegressionTests
 Feature: Edit HotelBooking Details
 
 Background:
@@ -7,7 +7,7 @@ Background:
 	Then user should get the response code 200
 	
 	
-@editFirstname	
+@Editlastname @Happypath	
 	Scenario Outline: Edit the firstname details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -26,7 +26,7 @@ Background:
       | viraat    | kohli    | virat1@gmail.com   | 46546321354 | 2025-10-12 | 2025-10-13 |
 	
 
-@editlastname	
+@Editlastname @Happypath	
 	Scenario Outline: Edit the lastname details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -45,7 +45,7 @@ Background:
       | virat     | sahu     | virat1@gmail.com   | 46546321354 | 2025-10-12 | 2025-10-13 |
 
 
-@editemail	
+@Editemail @Happypath	
 	Scenario Outline: Edit the lastname details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -65,7 +65,7 @@ Background:
 
 
 
-@editphone	
+@Editphone @Happypath	
 	Scenario Outline: Edit the phone no details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -85,7 +85,7 @@ Background:
 
 
 
-@editcheckindates	
+@Editcheckindates @Happypath	
 	Scenario Outline: Edit the phone no details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -104,7 +104,7 @@ Background:
       | virat     | kohli    | virat.kohli1@gmail.com   | 85458789652 | 2025-10-12   | 2025-10-13 |
 
 
-@editcheckoutdates	
+@Editcheckoutdates @Happypath	
 	Scenario Outline: Edit the phone no details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -123,7 +123,7 @@ Background:
       | virat     | kohli    | virat.kohli1@gmail.com   | 85458789652   | 2025-10-11   | 2025-10-13 |
 
 	
-@all
+@all @Happypath
 Scenario Outline: Edit the booking details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -142,7 +142,7 @@ Scenario Outline: Edit the booking details
       | rohit      | sharma    | rohit.s@gmail.com  | 76525895464 | 2025-09-15 | 2025-09-17 |
       
       
-@errors
+@errors @Negativepath
 Scenario Outline: Edit the firstname details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details
@@ -182,7 +182,7 @@ Examples:
       | sjuti     | pal      | pal.06@gmail.com    |  87955879706  | 2025-03-15 | 2025-03-18 |
       
  
-@errors_1
+@errors @Negativepath
 Scenario Outline: Update a booking with missing mandatory fields
 	Given user hits endpoint "api/booking"
     And user books the room with the given details
@@ -205,35 +205,35 @@ Scenario Outline: Update a booking with missing mandatory fields
       | virat     | kohli    | virat1@gmail.com   | 46546321354 | 2025-10-12 | 2025-10-13 |
       
 	
-@invalidID	
+@invalidID @Negativepath	
 Scenario: update booking with invalid ID
 	Given user hits endpoint "api/booking/"
     And user have valid booking payloads with update details
     When user send a update request with invalid ID
     Then the response status code should be 404 
 	
-@invalidfirstname	
+@invalidFirstname @Negativepath	
 Scenario: update booking with firstname contains special character
 	Given user hits endpoint "api/booking/"
     And user have valid booking payloads with update details
     When user update request with "firstname" as "R@M#U"
     Then the response status code should be 400  
  
-@invalidlastname	
+@invalidLastname @Negativepath	
 Scenario: update booking with lastname contains numeric value
 	Given user hits endpoint "api/booking/"
     And user have valid booking payloads with update details
     When user update request with "lastname" as "2345"
     Then the response status code should be 400
     
-@invalidphoneno	
+@invalidPhoneno	@Negativepath
 Scenario: update booking with phoneno contains alphanumeric value
 	Given user hits endpoint "api/booking/"
     And user have valid booking payloads with update details
     When user update request with "phoneno" as "2345hjuyt7u"
     Then the response status code should be 400  
     
-@invaliddaterange
+@invalidDaterange @Negativepath
  Scenario: update booking with checkin/checkout date contains invalid date range
 	Given user hits endpoint "api/booking/"
     And user have valid booking payloads with update details

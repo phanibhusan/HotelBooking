@@ -1,4 +1,4 @@
-package StepDefinations;
+package stepdefinitions;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,14 +18,14 @@ import pojoObjects.Booking;
 import pojoObjects.BookingDates;
 import utilis.CommonUtil;
 
-public class stepdefination {
+public class StepDefinitions {
 
     private BookingDates dates;
     private Booking bookingRequest;
     private CommonUtil util;
     private Response response;
 
-    public stepdefination() {
+    public StepDefinitions() {
         bookingRequest = new Booking();
         util = new CommonUtil();
     }
@@ -78,6 +78,7 @@ public class stepdefination {
         System.out.println("Actual Status Code: " + response.getStatusCode());
         System.out.println("Response Body: " + response.getBody().asString());
         Assert.assertEquals(response.getStatusCode(), expectedStatusCode);
+        
     }
 
     @Then("user should get the response code {int}")

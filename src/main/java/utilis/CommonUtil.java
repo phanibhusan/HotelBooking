@@ -34,8 +34,8 @@ public class CommonUtil {
 	   public RequestSpecification requestSetup() {
 
 		
-		RestAssured.baseURI = loadproperties.getProperty("baseURL");
-		CONTENT_TYPE = loadproperties.getProperty("content.type");
+		RestAssured.baseURI = LoadProperties.getProperty("baseURL");
+		CONTENT_TYPE = LoadProperties.getProperty("content.type");
 		return RestAssured.given().contentType(CONTENT_TYPE).accept(CONTENT_TYPE);
 	}	
         

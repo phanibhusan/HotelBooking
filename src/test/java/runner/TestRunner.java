@@ -1,4 +1,4 @@
-package TestRunner;
+package runner;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		
 		features = "src/test/resources/features/booking.feature",
-		glue = {"StepDefinations"}, 
+		glue = {"stepdefinitions"}, 
 		dryRun=false,
 
 		plugin = {"pretty", // pretty-printed logs in console

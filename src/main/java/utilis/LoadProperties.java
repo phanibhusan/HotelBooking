@@ -10,16 +10,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class loadproperties {
+public class LoadProperties {
 
 		private static FileInputStream input;
 		//private static Properties prop = null;
-		private static final Logger LOG = LogManager.getLogger(loadproperties.class);
+		private static final Logger LOG = LogManager.getLogger(LoadProperties.class);
 		private static Properties prop = new Properties();
 		public static String getProperty(String key) {
 	        InputStream input = null;
 	        try {
-	            input = loadproperties.class.getClassLoader().getResourceAsStream("common.properties");
+	            input = LoadProperties.class.getClassLoader().getResourceAsStream("common.properties");
 	            if (input == null) {
 	                throw new FileNotFoundException("Property file 'config.properties' not found in classpath");
 	            }
