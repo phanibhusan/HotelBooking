@@ -7,7 +7,7 @@ Background:
 	Then user should get the response code 200
 	
 	
-@Editlastname @Happypath	
+@Editfirstname @Happypath
 	Scenario Outline: Edit the firstname details
 	Given user hits endpoint "api/booking/"
     And user books the room with the given details

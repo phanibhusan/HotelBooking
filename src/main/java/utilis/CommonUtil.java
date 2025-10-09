@@ -21,7 +21,7 @@ public class CommonUtil {
 	String CONTENT_TYPE;
 	protected Response response;
 	RequestSpecification requestSpecification;
-	JSONObject requestBody;
+	
 
 	public CommonUtil() {
 		mapper = new ObjectMapper();

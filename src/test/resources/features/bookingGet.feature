@@ -1,4 +1,4 @@
-@GetBooking @Regressiontests
+@GetBooking @RegressionTest
 
 Feature: retrieve booking details
 
@@ -7,7 +7,7 @@ Background:
 	When user creates a auth token with login authentication as "admin" and "password"
 	Then user should get the response code 200 
 
-@Getroomdetails @GetBooking
+@Getroomdetails
 Scenario: Get the details of the room by room id
 	Given user hits endpoint "api/booking"
 	When asks the details of the room by room id 560
@@ -134,7 +134,7 @@ Scenario: validate the response code for invalid password
     When user creates a auth token with login authentication as "admin" and "password01"
     Then user should get the response code 401   
     
-@missingroomID @NegativePath
+@MissingroomID @NegativePath
 Scenario: validate the response code for missing room ID
     Given user hits endpoint "api/auth/login"
     When asks the details of the room without any room id

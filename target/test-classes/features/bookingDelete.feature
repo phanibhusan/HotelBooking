@@ -24,7 +24,7 @@ Scenario Outline: Delete a booking
       | virat      | raj      | raj.re@gmail.com   | 46645895464 | 2025-09-15 | 2025-09-17 |
     
     
-@Happypath
+@Happypath @DeleteBookingAfterEdit
 Scenario Outline: Delete a booking after Edit
 Given user hits endpoint "api/booking"
     And user books the room with the given details
@@ -54,26 +54,26 @@ Given user hits endpoint "api/booking"
      | virat     | ram      | ram@gmail.com      | 85421035698   | 2025-09-15 | 2025-09-17 |
 
        
-@Negativepath
+@Negativepath @DeleteBookingThatDoesNotExist
 Scenario: Attempt to delete a booking that does not exist
        Given user hits endpoint "api/booking" 
        When User try to delete requests for a non-existent booking id
        Then The response status code should be 405
        And The response message should contain "Method not allowed"  
        
-@Negativepath
+@Negativepath @DeleteBookingWithInvalidBookingID
 Scenario: Attempt to delete a booking with invalid booking ID
        Given user hits endpoint "api/booking" 
        When User try to delete requests for a invalid booking id
        Then The response status code should be 400
        
-@Negativepath
+@Negativepath @DeleteBookingIDWhichIsAlreadyDeleted
 Scenario: Attempt to delete a booking ID which is already deleted
        Given user hits endpoint "api/booking" 
        When User try to delete requests for booking ID which is already deleted
        Then The response status code should be 404  
        
-@Negativepath
+@Negativepath @DeleteBookingWithoutAuthentication
 Scenario: Attempt to delete a booking without authentication
        Given user hits endpoint "api/booking" 
        When User try to delete requests without authentication

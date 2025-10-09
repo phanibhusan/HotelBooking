@@ -1,9 +1,16 @@
 @CreateBooking @regressiontests
 Feature: Test booking creation functionality for a online booking application
 
+
+Scenario: scenario1
+	Given user click on url
+	When verify
+	
+
+
 @Happypath
 Scenario Outline: Successfully create a new room booking
-Given user hits endpoint "api/booking"
+    Given user hits endpoint "api/booking"
     When user books the room with the given details
 		| firstname   | lastname   | email   | phone   | checkin   | checkout   |	
         | <firstname> | <lastname> | <email> | <phone> | <checkin> | <checkout> |

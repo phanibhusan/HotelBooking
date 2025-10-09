@@ -9,6 +9,8 @@
 		<java.version>21.0.5</java.version>
 		<cucumber.version>7.29.0</cucumber.version>
 		<rest.assured.version>5.5.5</rest.assured.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
@@ -102,7 +104,11 @@
     <version>7.10.2</version>
     <scope>compile</scope> 
 </dependency>
- 
+ <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>gherkin</artifactId>
+    <version>35.1.0</version>
+</dependency>
 
 <dependency>
     <groupId>org.hamcrest</groupId>
