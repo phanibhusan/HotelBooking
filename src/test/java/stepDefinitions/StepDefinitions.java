@@ -27,7 +27,6 @@ public class StepDefinitions {
 	private Booking bookingRequest;
 	private CommonUtil util;
 	private Response response;
-	private String endpoint;
 	private int actualStatusCode;
 	private int bookingId;
 
@@ -104,7 +103,6 @@ public class StepDefinitions {
 
 	@Given("user hits endpoint {string}")
 	public void user_hits_endpoint1(String endpoint) {
-		this.endpoint = endpoint;
 		System.out.println("Hitting endpoint: " + endpoint);
 	}
 
