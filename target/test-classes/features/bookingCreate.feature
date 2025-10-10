@@ -2,13 +2,7 @@
 Feature: Test booking creation functionality for a online booking application
 
 
-Scenario: scenario1
-	Given user click on url
-	When verify
-	
-
-
-@Happypath
+@Happypath @NewRoomBooking
 Scenario Outline: Successfully create a new room booking
     Given user hits endpoint "api/booking"
     When user books the room with the given details
@@ -23,7 +17,7 @@ Scenario Outline: Successfully create a new room booking
       
       
       
-@Happypath
+@Happypath @SingleRoomBooking
 	 Scenario Outline: Successfully create a single room booking
 	    Given user hits endpoint "api/booking"
 	    When user books the room with the given details
@@ -37,7 +31,7 @@ Scenario Outline: Successfully create a new room booking
 	      | MSD        | Dhoni    | msd@gmail.com       | 85475896306 | 2025-10-20 | 2025-10-21 | 
       
       
-@Happypath
+@Happypath @DoubleRoomBooking
  Scenario Outline: Successfully create a Double room booking
     Given user hits endpoint "api/booking"
     When user books the room with the given details
@@ -50,7 +44,7 @@ Scenario Outline: Successfully create a new room booking
       | virat     | kohli    | virat.kohli@gmail.com| 98767890989 | 2025-10-15 | 2025-10-19 |
       | MSD       | Dhoni    | msd@gmail.com        | 85475896309 | 2025-10-20 | 2025-10- 21|  
       
-@Happypath
+@Happypath @SuitRoomBooking
  Scenario Outline: Successfully create a Suit room booking
     Given user hits endpoint "api/booking"
     When user books the room with the given details
@@ -66,7 +60,7 @@ Scenario Outline: Successfully create a new room booking
  
  
    
-@Negativepath
+@Negativepath @IncorrectFieldValues
 
 Scenario Outline: create a booking with incorrect field values
 	Given user hits endpoint "api/booking"
@@ -89,7 +83,7 @@ Scenario Outline: create a booking with incorrect field values
       | sruti     | pal      | pal.46@gmail.com    |  87955879706  |            | 2025-03-18 | must not be empty                   |
       
     
-@Negativepath
+@Negativepath @InvalidDateRange
 Scenario Outline: create a booking with invalid date range
 	Given user hits endpoint "api/booking"
     And user books the room with the given details
@@ -103,7 +97,7 @@ Scenario Outline: create a booking with invalid date range
       |  sam      | raj      | raj@gmail.com       | 98774523656  | 2025-03-18 | 2025-03-10  | invalid date range |
         
       
-@Negativepath
+@Negativepath @MoreThanTwoPerson
 Scenario Outline: create a booking with more than two person
 	Given user hits endpoint "api/booking"
     And user books the room with the given details
@@ -118,7 +112,7 @@ Scenario Outline: create a booking with more than two person
       |  ram      | raj      | raj2@gmail.com       | 98774523656  | 2025-03-12 | 2025-03-13  | maximum two guests allowed | 
       |  dam      | raj      | raj3@gmail.com       | 98774523656  | 2025-03-15 | 2025-03-16  | maximum two guests allowed |
     
-@Negativepath
+@Negativepath @MissingMandatoryFields
 Scenario Outline: create a booking with missing mandatory fields
 	Given user hits endpoint "api/booking"
     And user books the room with the given details

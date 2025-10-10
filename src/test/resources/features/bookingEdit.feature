@@ -166,8 +166,7 @@ Scenario Outline: Edit the firstname details
       | sjuti     | pal      | pal.46@gmail.com    |  87955879706  |  2025-03-18|            | must not be empty                   |
 	Then the response status code should be 400
 	And the user should see response with incorrect "<FieldError>"
-	
-	
+
 Examples:
       | firstname | lastname | email               | phone         | checkin    | checkout   | 
       | ram       | raju     | raj@gmail.com       | 98774523656   | 2025-03-15 | 2025-03-18 | 
