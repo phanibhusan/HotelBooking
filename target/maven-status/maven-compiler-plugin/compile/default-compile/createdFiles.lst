@@ -1,4 +1,4 @@
 utilis\CommonUtil.class
-utilis\LoadProperties.class
 pojoObjects\BookingDates.class
 pojoObjects\Booking.class
+utilis\LoadProperties.class

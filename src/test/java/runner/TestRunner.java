@@ -20,5 +20,5 @@ import io.cucumber.testng.CucumberOptions;
     publish = true,
         tags = "@NewRoomBooking"
 )
-public class TestRunner  {
+public class TestRunner extends AbstractTestNGCucumberTests {
 }

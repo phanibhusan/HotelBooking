@@ -1,18 +1,13 @@
 package stepDef;
 //package com.booking.stepDefinitions;
-
 import static org.junit.Assert.assertEquals;
-
 import java.util.Map;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
-
 //import base.Utilities;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import pojoObjects.BookingDates;
 import utilis.CommonUtil;
 
@@ -23,8 +18,7 @@ public class StepDefinitions extends CommonUtil {
 	String requestBody;
 	int bookingId;
 
-	public StepDefinitions() {
-	}
+	public StepDefinitions() {}
 
 	@Given("user hits endpoint {string}")
 	public void user_hits_endpoint(String endpoint) {

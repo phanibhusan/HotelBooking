@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.874 s <<< FAILURE! - in TestSuite
+setUpClass(runner.TestRunner)  Time elapsed: 0.741 s  <<< FAILURE!
+io.cucumber.core.gherkin.FeatureParserException: 
+Failed to parse resource at: file:///D:/APIAutomation/HotelBooking/src/test/resources/features/bookingEdit.feature
+(167:2): expected: #EOF, #TableRow, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'Then the response status code should be 400'
+(168:2): expected: #EOF, #TableRow, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'And the user should see response with incorrect "<FieldError>"'
+(199:7): expected: #EOF, #TableRow, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'Then the response status code should be 400'
+(200:4): expected: #EOF, #TableRow, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'And the user should see response with incorrect "<FieldError>"'
+
