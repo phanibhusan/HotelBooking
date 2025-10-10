@@ -1,4 +1,4 @@
-@e2e @Regressiontests
+@e2e @regression tests
 Feature: end to end flow hotel booking API Tests
 
 Background:

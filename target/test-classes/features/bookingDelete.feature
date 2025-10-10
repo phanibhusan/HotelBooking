@@ -1,4 +1,4 @@
-@DeleteBooking @Regressiontests
+@DeleteBooking @regression tests
 Feature: Delete Booking Details
 
 Background:

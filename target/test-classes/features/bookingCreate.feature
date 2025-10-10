@@ -1,4 +1,4 @@
-@CreateBooking @regressiontests
+@CreateBooking @regression tests
 Feature: Test booking creation functionality for a online booking application
 
 

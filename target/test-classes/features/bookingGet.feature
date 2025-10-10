@@ -1,4 +1,4 @@
-@GetBooking @RegressionTest
+@GetBooking @regression tests
 
 Feature: retrieve booking details
 

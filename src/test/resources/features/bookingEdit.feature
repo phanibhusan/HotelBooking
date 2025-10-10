@@ -1,4 +1,4 @@
-@EditBooking @RegressionTests
+@EditBooking @regression tests
 Feature: Edit HotelBooking Details
 
 Background:
